@@ -1,0 +1,21 @@
+{
+    "name": "dceleste35/twigproject",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Twigproject\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "dceleste35",
+            "email": "145990752+dceleste35@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.7"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^6.3"
+    }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <div class="bg-red-400">
+        <div class="p-4 text-red-900 flex justify-end space-x-4">
+            <a class="duration-300 hover:text-red-300" href="#">Requête SQL</a>
+            <a class="duration-300 hover:text-red-300" href="#">Déconexion</a>
+        </div>
+    </div>
+    <div class="bg-red-800 min-h-screen mx-auto flex flex-col items-center justify-center">
+        <form class="bg-red-400 p-12 flex flex-col text-red-900 rounded-lg" method="post" action="/database">
+            <h1 class="text-center font-bold text-2xl mb-6">Connexion</h1>
+            <div class="flex space-x-2">
+                <div class="space-y-4 text-end">
+                    <p>Hostname</p>
+                    <p>username</p>
+                    <p>password</p>
+                    <p>dbname</p>
+                </div>
+                <div class="space-y-4 flex flex-col">
+                    <input class="rounded" type="text" name="hostname">
+                    <input class="rounded" type="text" name="username">
+                    <input class="rounded" type="text" name="password">
+                    <input class="rounded" type="text" name="dbname">
+                </div>
+            </div>
+            <span class="font-bold text-xs mt-4 text-center">{{ error }}</span>
+            <button
+                class="mt-8 bg-red-200 rounded mx-auto px-4 py-2 text-red-800 hover:bg-red-800 hover:text-red-200 duration-300"
+                type="submit">Se connecter</button>
+        </form>
+    </div>
+</body>
+
+</html>
