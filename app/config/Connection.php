@@ -4,21 +4,14 @@ namespace Twigproject\config;
 use PDO;
 use PDOException;
 
-class Connexion
+class Connection
 {
     public static bool $result = true;
 
-    public static function try($post): bool
+    public static function index()
     {
         try {
-            $db_connection = [
-                'hostname' => $post['hostname'],
-                'username' => $post['username'],
-                'password' => $post['password'],
-                'dbname' => $post['dbname'],
-            ];
-
-            $conn = new PDO("mysql:host=" . $db_connection['hostname'] . ";dbname=" . $db_connection['dbname'], $db_connection['username'], $db_connection['password']);
+            $conn = new PDO("mysql:host=" . $_POST['hostname'] . ";dbname=" . $_POST['dbname'], $_POST['username'], $_POST['password']);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             //si connecté enregistrer les valeurs
@@ -33,6 +26,5 @@ class Connexion
             self::$result = false;
             return self::$result;
         }
-
     }
 }
