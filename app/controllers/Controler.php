@@ -1,16 +1,19 @@
 <?php
 
+namespace Twigproject\controllers;
+
 class Controler
 {
 
-    public function execute()
+    public function execute(): string
     {
         //Do stuff...
         //Genere une réponse au format HTML par exemple
-        $this->render();
+        return $this->render();
     }
 
-    public function render()
+    public function render(): string
     {
+        return 'document html/appel à Twig';
     }
 }
