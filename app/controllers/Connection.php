@@ -1,5 +1,5 @@
 <?php
-namespace Twigproject\config;
+namespace Twigproject\controllers;
 
 use PDO;
 use PDOException;
