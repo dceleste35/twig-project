@@ -15,34 +15,20 @@
             <a class="duration-300 hover:text-red-300" href="#">Déconexion</a>
         </div>
     </div>
-    <div class="bg-red-800 min-h-screen mx-auto flex flex-col items-center relative">
-        <table class="bg-white mt-8">
-            <tr class="border border-black rounded">
-                <td class="border border-black p-2 bg-gray-400">Table</td>
-                <td class="border border-black p-2 bg-gray-400">Engine</td>
-                <td class="border border-black p-2 bg-gray-400">Collation</td>
-                <td class="border border-black p-2 bg-gray-400">Data Length</td>
-                <td class="border border-black p-2 bg-gray-400">Index Length</td>
-                <td class="border border-black p-2 bg-gray-400">Data Free</td>
-                <td class="border border-black p-2 bg-gray-400">Auto Increment</td>
-                <td class="border border-black p-2 bg-gray-400">Rows</td>
-            </tr>
-            {% for table in tables %}
-            <tr class="border border-black bg-white p-2"></tr>
-            {% for key, column in table %}
-            {% if key == 'TABLE_NAME' %}
-            <td class="border border-black p-2">
-                <a href="/test" class="text-blue-700 underline hover:text-blue-900">
-                    {{ column }}
-                </a>
-            </td>
-            {% else %}
-            <td class="border border-black p-2">{{ column }}</td>
-            {% endif %}
+    <div class="bg-red-800 min-h-screen mx-auto flex flex-col items-center pt-24">
+        <div>
+            <h1 class="font-bold text-red-200 text-4xl">Base de données</h1>
+        </div>
+        <div class="mx-auto flex flex-col mt-4 rounded">
+            {% for database in databases %}
+            {% for key, name in database %}
+            <a href="/database/{{ name }}"
+                class="bg-red-400 text-red-900 underline hover:text-red-600 duration-200 py-1 px-2 border border-red-800 rounded">
+                {{ name }}
+            </a>
             {% endfor %}
-            </tr>
             {% endfor %}
-        </table>
+        </div>
     </div>
 </body>
 

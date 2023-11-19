@@ -17,8 +17,8 @@ class Router
         $routes = new RouteCollection();
 
         $routes->add('home', new Route('/', ['_controller' => 'controllers\\Home::index']));
-        $routes->add('database', new Route('/database', ['_controller' => 'controllers\\Database::index']));
-        $routes->add('tables', new Route('/database/{database}', ['_controller' => 'controllers\\Database::tables']));
+        $routes->add('database', new Route('/database', ['_controller' => 'controllers\\Database::get']));
+        $routes->add('tables', new Route('/database/{database}', ['_controller' => 'controllers\\Table::all']));
         $routes->add('structure', new Route('/database/{database}/{table}', ['_controller' => 'controllers\\Table::structure']));
         $routes->add('content', new Route('/database/{database}/{table}/rows', ['_controller' => 'controllers\\Table::content']));
 
@@ -40,7 +40,6 @@ class Router
         try {
             $parameters = $matcher->match($context->getPathInfo());
 
-            var_dump($parameters);
             // Extraire le contrôleur et la méthode
             [$controller, $method] = explode('::', $parameters['_controller']);
 

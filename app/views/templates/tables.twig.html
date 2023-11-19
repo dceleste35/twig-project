@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <div class="bg-red-400">
+        <div class="p-4 text-red-900 flex justify-end space-x-4">
+            <a class="duration-300 hover:text-red-300" href="/sqlquery">Requête SQL</a>
+            <a class="duration-300 hover:text-red-300" href="/logout">Déconexion</a>
+        </div>
+    </div>
+    <div class="bg-red-800 min-h-screen mx-auto flex flex-col items-center relative">
+        <div class="grid-cols-6 grid rounded-xl mt-12 bg-red-400 text-red-900">
+            <h3 class="p-2 font-black text-lg bg-red-200 rounded-tl">Table</h3>
+            <h3 class="p-2 font-black text-lg bg-red-200 ">Engine</h3>
+            <h3 class="p-2 font-black text-lg bg-red-200 ">Collation</h3>
+            <h3 class="p-2 font-black text-lg bg-red-200 ">Data Length</h3>
+            <h3 class="p-2 font-black text-lg bg-red-200 ">Index Length</h3>
+            <h3 class="p-2 font-black text-lg bg-red-200 rounded-tr">Rows</h3>
+            {% for table in tables %}
+            {% for key, column in table %}
+            {% if key == 'TABLE_NAME' %}
+            <p class="p-2 border-t border-red-200">
+                <a href="{{ database }}/{{ column }}" class="font-semibold underline hover:text-red-300 duration-200">
+                    {{ column }}
+                </a>
+            </p>
+            {% else %}
+            <p class="p-2 border-t border-red-200 ">{{ column }}</p>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>
