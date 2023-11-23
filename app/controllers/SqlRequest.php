@@ -59,11 +59,13 @@ class SqlRequest
                     } else {
                         // Si la requête échoue, affiche le message d'erreur.
                         $data['response'] = $response;
+                        $data['sql'] = $_POST['sql'];
                         echo $twig->render('requestsql.twig', $data);
                     }
                 } else {
                     // Si la requête n'est pas valide, affiche un message d'erreur.
                     $data['response'] = 'La requête n\'est pas valide';
+                    $data['sql'] = $_POST['sql'];
                     echo $twig->render('requestsql.twig', $data);
                 }
             } else {

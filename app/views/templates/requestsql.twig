@@ -16,7 +16,7 @@
     </div>
     <div class="bg-red-800 min-h-screen mx-auto flex flex-col items-center pt-12">
             <form class=" py-4 px-12 flex flex-col text-red-900 rounded-lg items-center" method="POST">
-                <textarea class="w-[500px] h-[300px] border-2 border-red-900 rounded-lg p-2" type="text" name="sql"></textarea>
+                <textarea class="w-[500px] h-[300px] border-2 border-red-900 rounded-lg p-2" type="text" name="sql">{{ sql }}</textarea>
                 <span class="text-red-50 text-center text-xl w-[500px] font-bold">{{ response }}</span>
                 <input class="mt-4 bg-red-400 hover:bg-red-300 duration-300 rounded-lg py-2 px-6" type="submit" value="Envoyer">
             </form>
