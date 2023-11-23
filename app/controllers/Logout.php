@@ -1,5 +1,14 @@
 <?php
+namespace Twigproject\controllers;
 
-session_destroy();
-unset($_SESSION);
-setcookie(session_name(), '');
+class Logout
+{
+    public function index()
+    {
+        session_destroy();
+        unset($_SESSION);
+        setcookie(session_name(), '');
+
+        header("Location: /");
+    }
+}
