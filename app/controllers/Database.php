@@ -23,7 +23,7 @@ class Database
                 'databases' => $databases
             ];
 
-            echo $twig->render('database.twig.html', $data);
+            echo $twig->render('database.twig', $data);
             var_dump($_SESSION);
         } else {
             header("Location: /");

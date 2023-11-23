@@ -3,8 +3,8 @@ namespace Twigproject\controllers;
 
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
+use Twigproject\traits\UriParser;
 use Twigproject\models\TableModel;
-use Twigproject\UriParser;
 
 class Table
 {
@@ -28,7 +28,7 @@ class Table
                 'database' => $database
             ];
 
-            echo $twig->render('tables.twig.html', $data);
+            echo $twig->render('tables.twig', $data);
 
         } else {
             header("Location: /");

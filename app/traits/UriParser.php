@@ -1,5 +1,5 @@
 <?php
-namespace Twigproject;
+namespace Twigproject\traits;
 
 trait UriParser
 {

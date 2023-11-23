@@ -14,6 +14,6 @@ class Home
         ];
         $loader = new FilesystemLoader('app/views/templates');
         $twig = new Environment($loader);
-        echo $twig->render('index.twig.html', $data);
+        echo $twig->render('index.twig', $data);
     }
 }
