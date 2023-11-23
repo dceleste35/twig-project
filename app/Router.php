@@ -21,6 +21,8 @@ class Router
         $routes->add('tables', new Route('/database/{database}', ['_controller' => 'controllers\\Table::all']));
         $routes->add('structure', new Route('/database/{database}/{table}', ['_controller' => 'controllers\\Table::structure']));
         $routes->add('content', new Route('/database/{database}/{table}/rows', ['_controller' => 'controllers\\Table::content']));
+        $routes->add('logout', new Route('/logout', ['_controller' => 'controllers\\Logout::index']));
+        $routes->add('logout', new Route('/database/{database}/requestsql', ['_controller' => 'controllers\\SqlRequest::index']));
 
         return $routes;
     }
