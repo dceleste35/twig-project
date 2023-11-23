@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/public/css/style.css" rel="stylesheet">
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <div class="bg-red-400">
+        <div class="p-4 text-red-900 flex justify-end space-x-4">
+            <a class="duration-300 hover:text-red-300" href="/logout">Déconexion</a>
+        </div>
+    </div>
+    <div class="bg-red-800 min-h-screen mx-auto flex flex-col items-center pt-12">
+            <form class=" py-4 px-12 flex flex-col text-red-900 rounded-lg items-center" method="POST">
+                <textarea class="w-[500px] h-[300px] border-2 border-red-900 rounded-lg p-2" type="text" name="sql"></textarea>
+                <span class="text-red-50 text-center text-xl w-[500px] font-bold">{{ response }}</span>
+                <input class="mt-4 bg-red-400 hover:bg-red-300 duration-300 rounded-lg py-2 px-6" type="submit" value="Envoyer">
+            </form>
+    </div>
+</body>
+
+</html>

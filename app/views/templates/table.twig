@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/public/css/style.css" rel="stylesheet">
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <div class="bg-red-400">
+        <div class="p-4 text-red-900 flex justify-end space-x-4">
+            <a class="duration-300 hover:text-red-300" href="/database/{{ database }}">Tables</a>
+            <a class="duration-300 hover:text-red-300" href="/database/{{ database }}/requestsql">Requête SQL</a>
+            <a class="duration-300 hover:text-red-300" href="/logout">Déconexion</a>
+        </div>
+    </div>
+    <div class="bg-red-800 min-h-screen mx-auto flex flex-col items-center relative">
+        <div class="mt-12">
+            <a href="/database/{{ database }}/{{ table }}" class="bg-red-400 py-2 px-4 rounded text-red-800 hover:text-red-300">Structure</a>
+            <a href="/database/{{ database }}/{{ table }}/rows" class="bg-red-400 py-2 px-4 rounded text-red-800 hover:text-red-300">Données</a>
+        </div>
+        <div class="grid-cols-{{ nbColumn }} grid rounded-xl mt-4 bg-red-400 text-red-900 mx-12">
+            {% for key, rows in response[0] %}
+            <h3 class="p-2 font-black text-lg bg-red-200 rounded-t">{{ key }}</h3>
+            {% endfor %}
+            {% for rows in response %}
+            {% for row in rows %}
+            <p class="p-2 border overflow-hidden border-red-200">{{ row }}</p>
+            {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>
