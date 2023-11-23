@@ -103,7 +103,7 @@ class Table
             $response = TableModel::getTable($table);
 
             // Vérification du nombre de colonnes dans les données.
-            $response ? $count = count($response[0]) : null;
+            $response ? $count = count($response[0]) : $count = null;
 
             // Préparation des données pour le template.
             $data = [
