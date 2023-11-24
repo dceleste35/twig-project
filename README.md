@@ -13,8 +13,6 @@ Assurez-vous d'avoir les éléments suivants installés avant de démarrer :
 
 1. Clonez le référentiel sur votre machine locale.
 
-bashCopy code
-
 `git clone https://github.com/dceleste35/twig-project`
 
 2. Installez les dépendances via Composer.
