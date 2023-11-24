@@ -17,8 +17,6 @@ Assurez-vous d'avoir les éléments suivants installés avant de démarrer :
 
 2. Installez les dépendances via Composer.
 
-bashCopy code
-
 `composer install`
 
 3. Lancez votre serveur PHP
